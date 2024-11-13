@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños, Cami!</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            color: #d81b60;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        p {
+            color: #880e4f;
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .flower {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            animation: spin 10s linear infinite;
+        }
+
+        .flower svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .flower:nth-child(1) {
+            top: 10%;
+            left: 10%;
+        }
+
+        .flower:nth-child(2) {
+            top: 20%;
+            right: 10%;
+        }
+
+        .flower:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+        }
+
+        .flower:nth-child(4) {
+            bottom: 10%;
+            right: 15%;
+        }
+
+        .message {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 2rem;
+            max-width: 80%;
+        }
+
+        .heart-icon {
+            fill: #e91e63;
+            width: 30px;
+            height: 30px;
+            animation: float 2s ease-in-out infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flower">
+        <svg viewBox="0 0 100 100">
+            <path fill="#ff69b4" d="M50 0 C60 30 70 40 100 50 C70 60 60 70 50 100 C40 70 30 60 0 50 C30 40 40 30 50 0" />
+        </svg>
+    </div>
+    <div class="flower">
+        <svg viewBox="0 0 100 100">
+            <path fill="#ff69b4" d="M50 0 C60 30 70 40 100 50 C70 60 60 70 50 100 C40 70 30 60 0 50 C30 40 40 30 50 0" />
+        </svg>
+    </div>
+    <div class="flower">
+        <svg viewBox="0 0 100 100">
+            <path fill="#ff69b4" d="M50 0 C60 30 70 40 100 50 C70 60 60 70 50 100 C40 70 30 60 0 50 C30 40 40 30 50 0" />
+        </svg>
+    </div>
+    <div class="flower">
+        <svg viewBox="0 0 100 100">
+            <path fill="#ff69b4" d="M50 0 C60 30 70 40 100 50 C70 60 60 70 50 100 C40 70 30 60 0 50 C30 40 40 30 50 0" />
+        </svg>
+    </div>
+
+    <div class="container">
+        <h1>¡Feliz Cumpleaños, Cami!
+            <svg class="heart-icon" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+        </h1>
+
+        <div class="message">
+            <p>En este día tan especial, quiero recordarte lo mucho que significas para mí.</p>
+            <p>Que este nuevo año de vida esté lleno de alegría, amor y momentos inolvidables.</p>
+            <p>El mundo es más bonito con mujeres tan extraordinarias como tú :)</p>
+            <svg class="heart-icon" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        // Lanzar confeti cada 3 segundos
+        confetti();
+        setInterval(confetti, 3000);
+    </script>
+</body>
+
+</html>
